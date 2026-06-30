@@ -61,7 +61,7 @@ Layered package at `src/discord_scraper/` with strict dependency direction: `cli
 
 ## Key details
 
-- Auth token: `.env` as `DISCORD_TOKEN` (loaded via `python-dotenv`)
+- **Auth token: `.env` as `DISCORD_TOKEN`** (loaded via `python-dotenv`). This is a **user token** (not a bot token). Treat it like a password — never log it, commit it, or include it in error messages. Leaking it gives full access to the user's Discord account. `.env` and `config.toml` are gitignored for this reason.
 - Channel config: `config.toml` (gitignored), managed via `discord-scraper config` commands
 - Output directory: `data/` (gitignored)
 - Dependencies: `click`, `httpx`, `python-dotenv`, `tqdm`, `rich`
